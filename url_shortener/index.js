@@ -12,9 +12,10 @@ app.use(cors())
 
 app.use("/users",userRouter)
 app.use("/url",urlRouter)
-// app.use(LogMiddleware())
+
 
 app.get("/",(req,res)=>{
+    console.log("Hii from home page")
     res.send("Hiii From Gurucool Home Page")
 })
 
