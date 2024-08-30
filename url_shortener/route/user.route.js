@@ -2,7 +2,9 @@ const express = require("express")
 const bcrypt = require("bcrypt")
 const { UserModel } = require("../model/user.model")
 const jwt = require("jsonwebtoken")
+const { auth } = require("../middleware/auth.middleware")
 const userRouter = express.Router()
+
 
 userRouter.post("/register",async(req,res)=>{
     console.log(req.body)
@@ -27,6 +29,8 @@ userRouter.post("/register",async(req,res)=>{
         res.status(400).send({"error":error})
     }
 })
+
+userRouter.use(auth)
 
 userRouter.post("/login",async(req,res)=>{
     const {email,pass} = req.body
