@@ -14,10 +14,10 @@ app.use("/users",userRouter)
 app.use("/url",urlRouter)
 
 
-app.get("/",(req,res)=>{
-    console.log("Hii from home page")
-    res.send("Hiii From Gurucool Home Page")
-})
+// app.get("/",(req,res)=>{
+//     console.log("Hii from home page")
+//     res.send("Hiii From Gurucool Home Page")
+// })
 
 
 app.listen(process.env.port,async()=>{
